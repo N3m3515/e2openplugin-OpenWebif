@@ -99,9 +99,13 @@ def getInfo():
 			chipset = "SIGMA 8653"
  		else:
 			chipset = "SIGMA 8634"
+	elif fileExists("/proc/stb/info/model"):
+		brand = "Edision"
+		model = "VIP"
+		chipset = "STb7109"
 	else:
 		f = open("/proc/stb/info/model",'r')
- 		model = "STb7109"
+ 		model = f.readline().strip().lower()
  		f.close()
 
 	info['brand'] = brand
