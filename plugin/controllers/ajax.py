@@ -82,7 +82,9 @@ class AjaxController(BaseController):
 		elif model == "et4000" :
 			model = "et4x00"
 		elif model == "xp1000" :
-			model = "xp1000"		
+			model = "xp1000"
+		elif model == "hl101" :
+			model = "VIP"
 		if fileExists(getPublicPath("/images/boxes/" + model + ".jpg")):
 			info["boximage"] = model + ".jpg"
 		else:
@@ -106,6 +108,8 @@ class AjaxController(BaseController):
 			box['brand'] = "azbox"
 		elif fileExists("/proc/stb/info/gbmodel"):
 			box['brand'] = "gigablue"
+	        elif fileExists("/proc/stb/info/model"):
+			box['brand'] = "Edision"
 		return { "box": box }
 		
 	def P_powerstate(self, request):
