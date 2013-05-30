@@ -101,7 +101,7 @@ def getInfo():
 			chipset = "SIGMA 8634"
 	else:
 		f = open("/proc/stb/info/model",'r')
- 		model = f.readline().strip().lower()
+ 		model = "STb7109"
  		f.close()
 
 	info['brand'] = brand
